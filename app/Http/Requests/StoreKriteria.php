@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreCPenerima extends FormRequest
+class StoreKriteria extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +25,8 @@ class StoreCPenerima extends FormRequest
     {
         return [
             'nama' => 'required|max:50',
-            'alamat' => 'required',
-            'jenis_kelamin' => 'required',
-            'tgl_lahir' =>  'required',
-            'telp' => 'required|max:20|regex:[[0-9]+]'
+            'atribut' => 'required',
+            'bobot' => 'required'
         ];
     }
 }

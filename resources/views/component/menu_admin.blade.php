@@ -16,8 +16,7 @@
             <ul class="nav navbar-nav">
                 <li id="li-dashboard"><a href="#">Dashboard</a></li>
                 <li id="li-cpenerima"><a href="{{ url('cpenerima')  }}">C. Penerima</a></li>
-                <li id="li-kriteria"><a href="#">Kriteria</a></li>
-                <li id="li-penilaian"><a href="#">Penilaian</a></li>
+                <li id="li-kriteria"><a href="{{ url('kriteria')  }}">Kriteria</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

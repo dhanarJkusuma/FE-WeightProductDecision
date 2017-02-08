@@ -12,10 +12,10 @@
             <div class="col-md-12">
 
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{ $title  }}</div>
+                    <div class="panel-heading">{{ $title }}</div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <a href="{{ url('cpenerima') }}">
+                            <a href="{{ url('kriteria') }}">
                                 <button class="btn btn-info">
                                     <span class="glyphicon glyphicon-arrow-left"></span>
                                     Kembali
@@ -26,27 +26,17 @@
                             <tr>
                                 <td><b>Nama</b></td>
                                 <td width="1%"> : </td>
-                                <td>{{ $penerima->nama  }}</td>
+                                <td>{{ $kriteria->nama  }}</td>
                             </tr>
                             <tr>
-                                <td><b>Alamat</b></td>
+                                <td><b>Atribut</b></td>
                                 <td> : </td>
-                                <td>{{ $penerima->alamat  }}</td>
+                                <td>{{ $kriteria->atribut  }}</td>
                             </tr>
                             <tr>
-                                <td><b>Jenis Kelamin</b></td>
+                                <td><b>Bobot</b></td>
                                 <td> : </td>
-                                <td>{{ ($penerima->jenis_kelamin == 'L') ? "Laki-laki" : "Perempuan"  }}</td>
-                            </tr>
-                            <tr>
-                                <td><b>Tanggal Lahir</b></td>
-                                <td> : </td>
-                                <td>{{ date_format(new DateTime($penerima->tgl_lahir), 'd F Y')  }}</td>
-                            </tr>
-                            <tr>
-                                <td><b>Telp</b></td>
-                                <td> : </td>
-                                <td>{{ $penerima->telp  }}</td>
+                                <td>{{ $kriteria->bobot }}</td>
                             </tr>
                         </table>
                     </div>
@@ -55,3 +45,5 @@
         </div>
     </div>
 @endsection
+
+

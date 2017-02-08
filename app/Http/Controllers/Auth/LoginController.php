@@ -49,7 +49,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials, $request->has('remember'))){
             return redirect()->intended($this->redirectPath());
         }
-        return redirect($this->loginPath())
+        return redirect('login')
             ->withInput($request->only('username', 'remember'))
             ->withErrors([
                 'username' => 'Incorrect email address or password',

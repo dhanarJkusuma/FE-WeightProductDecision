@@ -46,6 +46,7 @@ class InitDb extends Migration
             $table->integer('cpenerima_id')->unsigned();
             $table->integer('kriteria_id')->unsigned();
             $table->double('nilai');
+            $table->timestamps();
         });
 
         Schema::table('nilai', function(Blueprint $table){

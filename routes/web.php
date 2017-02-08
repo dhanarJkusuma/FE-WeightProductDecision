@@ -21,3 +21,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('cpenerima','CPenerimaController');
+Route::resource('kriteria','KriteriaController');
+Route::get('/nilai/create/{penerima}', 'NilaiController@create')->name('nilai.create');
+Route::post('/nilai/create/{penerima}', 'NilaiController@store')->name('nilai.create');

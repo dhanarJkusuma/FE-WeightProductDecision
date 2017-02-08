@@ -97,7 +97,7 @@ class CPenerimaController extends Controller
             $request->session()->flash('success', 'Berhasil mengubah data calon penerima beasiswa.');
             return redirect()->action('CPenerimaController@index');
         }else{
-            $request->session()->flash('success', 'Berhasil mengubah data calon penerima beasiswa.');
+            $request->session()->flash('error', 'Gagal mengubah data calon penerima beasiswa.');
         }
         return view('cpenerima.update', ['penerima' => $penerima, 'menu' => 'cpenerima' , 'title' => 'Ubah data ' . $penerima->nama]);
     }
