@@ -35,28 +35,28 @@
                                 </button>
                             </a>
                         </div>
-
                         <div class="create-form">
                             <form method="post" action="{{ url('nilai/create', ['id' => $penerima->id ]) }}">
-
-                            {{ csrf_field() }}
-
+                                {{ csrf_field() }}
                                 <input type="hidden" name="penerima" value="{{  $penerima->id }}"/>
-
+                                <table class="table table-bordered">
                                 @foreach($kriteria as $k)
-                                <!-- form nilai -->
-                                <div class="form-group">
-                                    <label>{{ $k->nama  }}*</label>
-                                    <input type="text" class="form-control" name="kriteria[{{ $k->id  }}]" value="{{ $data[$k->id]  }}" placeholder="Nilai" pattern="[0-9]+(\.[0-9][0-9]?)?" />
-                                </div>
-                                <!-- end form nilai-->
+                                    <tr>
+                                        <td>
+                                            <strong>{{ $k->nama  }}</strong>
+                                        </td>
+                                        <td width="1%">
+                                            :
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form-control" name="kriteria[{{ $k->id  }}]" value="{{ (array_key_exists($k->id,$data)) ? $data[$k->id] : '' }}" placeholder="Nilai" pattern="[0-9]+(\.[0-9][0-9]?)?" />
+                                        </td>
+                                    </tr>
                                 @endforeach
-
+                                </table>
                                 <button class="btn btn-warning" type="submit">Save</button>
                             </form>
                         </div>
-
-
                     </div>
                 </div>
             </div>

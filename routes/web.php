@@ -19,7 +19,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-
+Route::get('/home/calculate', 'HomeController@calculate');
 Route::resource('cpenerima','CPenerimaController');
 Route::resource('kriteria','KriteriaController');
 Route::get('/nilai/create/{penerima}', 'NilaiController@create')->name('nilai.create');

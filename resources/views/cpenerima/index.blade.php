@@ -66,7 +66,7 @@
                                         <a href="{{  url('cpenerima',['id' => $c->id]) }}"><button class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="lihat data"><span class="glyphicon glyphicon-eye-open"></span> </button></a>
                                         <a href="{{  url()->route('cpenerima.edit', ['id' => $c->id])}}"><button class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="ubah data"><span class="glyphicon glyphicon-pencil"></span> </button></a>
                                         <a href="{{  url()->route('nilai.create',['penerima' => $c->id]) }}"><button class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="penilaian"><span class="glyphicon glyphicon-ok"></span> </button></a>
-                                        <a href="#"data-id="{{ $c->id  }}" id="destroy"><button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="hapus data"><span class="glyphicon glyphicon-trash"></span> </button></a>
+                                        <a href="#"data-id="{{ $c->id  }}" class="destroy"><button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="hapus data"><span class="glyphicon glyphicon-trash"></span> </button></a>
                                     </td>
                                 </tr>
                                 @php
@@ -187,7 +187,7 @@
             $('#date').datepicker({
                 format : 'yyyy-mm-dd'
             });
-            $('#destroy').on('click', function(){
+            $('.destroy').on('click', function(){
                 var id = $(this).data('id');
                 $('#post_delete').attr('action','{{  url('cpenerima')  }}/' + id);
                 $('#hapus').modal('show');

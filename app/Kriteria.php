@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kriteria extends Model
 {
+    const BENEFIT = 'benefit';
+    const COST = 'cost';
     protected $table = 'kriteria';
     protected $fillable = ['nama', 'atribut', 'bobot'];
 

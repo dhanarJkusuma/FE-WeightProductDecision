@@ -14,7 +14,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li id="li-dashboard"><a href="#">Dashboard</a></li>
+                <li id="li-dashboard"><a href="{{ url('home') }}">Dashboard</a></li>
                 <li id="li-cpenerima"><a href="{{ url('cpenerima')  }}">C. Penerima</a></li>
                 <li id="li-kriteria"><a href="{{ url('kriteria')  }}">Kriteria</a></li>
             </ul>

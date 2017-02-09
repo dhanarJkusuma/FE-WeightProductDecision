@@ -50,8 +50,8 @@ class InitDb extends Migration
         });
 
         Schema::table('nilai', function(Blueprint $table){
-            $table->foreign('cpenerima_id')->references('id')->on('cpenerima');
-            $table->foreign('kriteria_id')->references('id')->on('kriteria');
+            $table->foreign('cpenerima_id')->references('id')->on('cpenerima')->onDelete('cascade');;
+            $table->foreign('kriteria_id')->references('id')->on('kriteria')->onDelete('cascade');;
         });
     }
 

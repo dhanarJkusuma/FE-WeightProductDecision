@@ -59,7 +59,7 @@
                                     <td>
                                         <a href="{{  url('kriteria',['id' => $k->id]) }}"><button class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="lihat data"><span class="glyphicon glyphicon-eye-open"></span> </button></a>
                                         <a href="{{  url()->route('kriteria.edit', ['id' => $k->id])}}"><button class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="ubah data"><span class="glyphicon glyphicon-pencil"></span> </button></a>
-                                        <a href="#" data-id="{{ $k->id  }}" id="destroy"><button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="hapus data"><span class="glyphicon glyphicon-trash"></span> </button></a>
+                                        <a href="#" data-id="{{ $k->id  }}" class="destroy"><button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="hapus data"><span class="glyphicon glyphicon-trash"></span> </button></a>
                                     </td>
                                 </tr>
                                 @php
@@ -157,7 +157,7 @@
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip()
 
-            $('#destroy').on('click', function(){
+            $('.destroy').on('click', function(){
                 var id = $(this).data('id');
                 $('#post_delete').attr('action','{{  url('kriteria')  }}/' + id);
                 $('#hapus').modal('show');
