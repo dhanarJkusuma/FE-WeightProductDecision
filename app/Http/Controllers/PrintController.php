@@ -6,13 +6,11 @@ use Illuminate\Http\Request;
 use App\Utils\WPGenerator;
 use App\CPenerima;
 use App\Kriteria;
-use Vsmoraes\Pdf\Pdf;
 class PrintController extends Controller
 {
-    private $pdf;
-    public function __construct(Pdf $pdf)
+
+    public function __construct()
     {
-        $this->pdf = $pdf;
     }
 
     public function index(){
