@@ -7,6 +7,7 @@ use App\Kriteria;
 use App\Nilai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Utils\WPGenerator;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,12 @@ class HomeController extends Controller
 
     public function index()
     {
+        return view('home')->with([
+            'menu' => 'dashboard'
+        ]);
+    }
+
+    public function list_data(){
         $cpenerima = CPenerima::all();
         $kriteria = Kriteria::all();
         $nilai = Nilai::all();
@@ -45,69 +52,22 @@ class HomeController extends Controller
         }
 
 
-        return view('home')->with([
-            'menu' => 'dashboard',
+        return view('perhitungan')->with([
+            'menu' => 'list',
             'cpenerima' => $cpenerima,
             'kriteria' => $kriteria,
             'data' => $data
         ]);
     }
 
-    private function weight_product(){
-        $wj = DB::table('kriteria')->sum('bobot');
-        $kriteria = Kriteria::all();
-        $weight = [];
-        foreach ($kriteria as $k){
-            $weight[$k->id] = $k->bobot/$wj;
-        }
-
-        $nilai = Nilai::all();
-        $penerima = null;
-        $s = [];
-
-        $tmp_s = 1;
-        foreach ($nilai as $n) {
-            if($penerima!=$n->cpenerima_id){
-                $penerima = $n->cpenerima_id;
-                $tmp_s = 1;
-            }
-
-            if($n->kriteria->atribut == Kriteria::COST){
-                $weight[$n->kriteria_id] *= -1;
-            }
-            $tmp_s *= pow($n->nilai,$weight[$n->kriteria_id]);
-            if($penerima!=null){
-                $tmp = [];
-                $tmp['s'] = $tmp_s;
-                $tmp['penerima'] = $penerima;
-                array_push($s,$tmp);
-            }
-        }
-
-        $vj=0;
-        foreach ($s as $single_s){
-            $vj += $single_s['s'];
-        }
-        $v = [];
-
-        foreach ($s as $single_s){
-            $v[$single_s['penerima']] = $single_s['s']/$vj;
-        }
-        return [
-            'weight' => $weight,
-            's' => $s,
-            'v' => $v
-        ];
-    }
-
     public function calculate(){
-        $data = $this->weight_product();
+        $data = WPGenerator::weight_product();
         $kriteria = Kriteria::all();
         $penerima = CPenerima::all();
 
 
         return view('calculate')->with([
-            'menu' => 'dashboard',
+            'menu' => 'list',
             'kriteria' => $kriteria,
             'data' => $data,
             'penerima' => $penerima

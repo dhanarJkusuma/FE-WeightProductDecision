@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('css')
-    <link href="{{ asset('plugins/bootstrap-datepicker')  }}" type="text/css" rel="stylesheet"/>
+    <link href="{{ asset('plugins/bootstrap-datepicker/bootstrap-datepicker.min.css')  }}" type="text/css" rel="stylesheet"/>
 @endpush
 
 @section('content')

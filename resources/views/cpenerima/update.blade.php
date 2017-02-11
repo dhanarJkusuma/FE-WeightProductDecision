@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+
+@push('css')
+<link href="{{ asset('plugins/bootstrap-datepicker/bootstrap-datepicker.min.css')  }}" type="text/css" rel="stylesheet"/>
+@endpush
+
 @section('content')
 
 
@@ -98,3 +103,15 @@
     </div>
 @endsection
 
+
+@push('javascript')
+<script src="{{ asset('plugins/bootstrap-datepicker/bootstrap-datepicker.min.js')  }}" type="text/javascript"></script>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip()
+        $('#date').datepicker({
+            format : 'yyyy-mm-dd'
+        });
+    });
+</script>
+@endpush

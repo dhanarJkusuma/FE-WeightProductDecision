@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@push('css')
+<link href="{{ asset('plugins/datatable/jquery.dataTables.min.css')  }}" rel="stylesheet"/>
+@endpush
+
+
 @section('content')
 
     <div class="container">
@@ -16,7 +21,7 @@
                         <!-- Weight -->
                         <h3>Weight</h3>
                         <div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" id="weight">
                                 <thead>
                                     <tr>
                                         <th>
@@ -42,7 +47,7 @@
                         <!-- S-->
                         <h3>Nilai S</h3>
                         <div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" id="svalue">
                                 <thead>
                                 <tr>
                                     <th>
@@ -76,7 +81,7 @@
                         <!-- V -->
                         <h3>Nilai V</h3>
                         <div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" id="vector">
                                 <thead>
                                 <tr>
                                     <th>
@@ -107,3 +112,26 @@
         </div>
     </div>
 @endsection
+
+
+@push('javascript')
+<script src="{{ asset('plugins/datatable/jquery.dataTables.min.js')  }}"></script>
+
+<script>
+    $(document).ready(function(){
+        $('#weight').DataTable({
+            aaSorting: [[1, 'desc']],
+            search : false
+        });
+        $('#svalue').DataTable({
+            aaSorting: [[1, 'desc']],
+            search : false
+        });
+        $('#vector').DataTable({
+            aaSorting: [[1, 'desc']],
+            search : false
+        });
+    });
+</script>
+@endpush
+
