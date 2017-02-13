@@ -19,7 +19,7 @@ class UserController extends Controller
 
         $data = array(
             'title' => 'User',
-            'menu' => 'users',
+            'menu' => 'user',
             'users' => $users
         );
         return view('user.index')->with($data);
