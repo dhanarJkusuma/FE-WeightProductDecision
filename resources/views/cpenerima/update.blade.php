@@ -48,6 +48,11 @@
 
                                 {{ csrf_field() }}
 
+                                <div class="form-group">
+                                    <label>NIS*</label>
+                                    <input type="text" class="form-control" name="nis" placeholder="NIS" required/>
+                                </div>
+
                                 <!-- form nama -->
                                 <div class="form-group">
                                     <label>Nama*</label>

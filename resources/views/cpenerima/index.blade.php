@@ -46,6 +46,7 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>NIS</th>
                                     <th>Nama</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Telpon</th>
@@ -59,6 +60,7 @@
                                 @foreach($calon as $c)
                                 <tr>
                                     <td>{{ $index  }}</td>
+                                    <td>{{ $c->nis  }}</td>
                                     <td>{{ $c->nama  }}</td>
                                     <td>{{ ($c->jenis_kelamin == 'L') ? 'laki-laki' : 'perempuan' }}</td>
                                     <td>{{ $c->telp  }}</td>
@@ -94,6 +96,13 @@
                     </div>
                     <div class="modal-body">
                         <div class="create-form">
+                            <!-- form nama -->
+                            <div class="form-group">
+                                <label>NIS*</label>
+                                <input type="text" class="form-control" name="nis" placeholder="NIS" required/>
+                            </div>
+                            <!-- end form nama -->
+
                             <!-- form nama -->
                             <div class="form-group">
                                 <label>Nama*</label>

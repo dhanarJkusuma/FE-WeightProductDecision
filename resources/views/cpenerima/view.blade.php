@@ -24,6 +24,11 @@
                         </div>
                         <table class="table table-bordered">
                             <tr>
+                                <td><b>NIS</b></td>
+                                <td width="1%"> : </td>
+                                <td>{{ $penerima->nis  }}</td>
+                            </tr>
+                            <tr>
                                 <td><b>Nama</b></td>
                                 <td width="1%"> : </td>
                                 <td>{{ $penerima->nama  }}</td>
