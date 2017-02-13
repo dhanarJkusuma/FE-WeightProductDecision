@@ -4,7 +4,11 @@
 @section('content')
 
     <div class="container">
-        @include('component.menu_admin')
+        @if(Auth::user()->level==='admin')
+            @include('component.menu_admin')
+        @else
+            @include('component.menu_user')
+        @endif
     </div>
 
     <div class="container">

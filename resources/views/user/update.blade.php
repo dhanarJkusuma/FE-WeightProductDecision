@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 
 
@@ -30,32 +31,29 @@
                     <div class="panel-heading">{{ $title  }}</div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <a href="{{ url('cpenerima') }}">
+                            <a href="{{ urL('cpenerima') }}">
                                 <button class="btn btn-info">
                                     <span class="glyphicon glyphicon-arrow-left"></span>
                                     Kembali
                                 </button>
                             </a>
                         </div>
+
                         <div class="create-form">
-                            <form method="post" action="{{ url('nilai/create', ['id' => $penerima->id ]) }}">
+                            <form method="post" action="{{ route('user.update', ['id' => $user->id ]) }}">
                                 {{ csrf_field() }}
-                                <input type="hidden" name="penerima" value="{{  $penerima->id }}"/>
-                                <table class="table table-bordered">
-                                @foreach($kriteria as $k)
-                                    <tr>
-                                        <td>
-                                            <strong>{{ $k->nama  }}</strong>
-                                        </td>
-                                        <td width="1%">
-                                            :
-                                        </td>
-                                        <td>
-                                            <input type="text" class="form-control" name="kriteria[{{ $k->id  }}]" value="{{ (array_key_exists($k->id,$data)) ? $data[$k->id] : '' }}" placeholder="Nilai" pattern="[0-9]+(\.[0-9][0-9]?)?" />
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                </table>
+
+                                <div class="form-group">
+                                    <label>Username*</label>
+                                    <input type="text" class="form-control" name="username" placeholder="Username" value="{{ $user->username  }}" required/>
+                                </div>
+
+                                <!-- form nama -->
+                                <div class="form-group">
+                                    <label>Nama*</label>
+                                    <input type="text" class="form-control" name="nama" placeholder="Nama" value="{{ $user->nama  }}"/>
+                                </div>
+                                <!-- end form nama -->
                                 <button class="btn btn-warning" type="submit">Save</button>
                             </form>
                         </div>
@@ -66,3 +64,11 @@
     </div>
 @endsection
 
+
+@push('javascript')
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+@endpush

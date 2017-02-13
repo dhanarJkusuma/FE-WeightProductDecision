@@ -5,7 +5,9 @@
 
 
     <div class="container">
-        @include('component.menu_admin')
+        @if(Auth::user()->level==='admin')
+            @include('component.menu_admin')
+        @endif
     </div>
 
     <div class="container">

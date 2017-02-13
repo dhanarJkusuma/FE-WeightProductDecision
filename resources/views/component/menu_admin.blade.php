@@ -19,6 +19,7 @@
                 <li id="li-cpenerima"><a href="{{ url('cpenerima')  }}">C. Penerima</a></li>
                 <li id="li-kriteria"><a href="{{ url('kriteria')  }}">Kriteria</a></li>
                 <li id="li-list"><a href="{{ url('home/list')  }}">Daftar Nilai</a></li>
+                <li id="li-user"><a href="{{ url('user')  }}">User</a></li>
                 <li id="li-print"><a class="btn-print" href="#">Cetak Laporan</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->

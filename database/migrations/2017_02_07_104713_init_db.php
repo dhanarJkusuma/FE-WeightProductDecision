@@ -18,7 +18,7 @@ class InitDb extends Migration
             $table->string('username',30)->unique();
             $table->string('password', 100);
             $table->string('nama', 50);
-            $table->enum('level',['admin','user']);
+            $table->enum('level',['admin','user'])->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
