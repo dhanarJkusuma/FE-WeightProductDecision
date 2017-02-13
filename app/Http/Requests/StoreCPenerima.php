@@ -24,6 +24,7 @@ class StoreCPenerima extends FormRequest
     public function rules()
     {
         return [
+            'nis' => 'required|max:20|regex:[[0-9]+]',
             'nama' => 'required|max:50',
             'alamat' => 'required',
             'jenis_kelamin' => 'required',

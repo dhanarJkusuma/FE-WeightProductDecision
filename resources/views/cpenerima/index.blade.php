@@ -101,7 +101,7 @@
                             <!-- form nama -->
                             <div class="form-group">
                                 <label>NIS*</label>
-                                <input type="text" class="form-control" name="nis" placeholder="NIS" required/>
+                                <input type="text" pattern="[0-9]+" class="form-control" name="nis" placeholder="NIS" required/>
                             </div>
                             <!-- end form nama -->
 
