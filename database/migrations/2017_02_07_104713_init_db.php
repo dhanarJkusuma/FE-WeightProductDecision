@@ -25,7 +25,7 @@ class InitDb extends Migration
 
         Schema::create('cpenerima', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('nis',20);
+            $table->integer('nis',20)->unsigned();
             $table->string('nama', 50);
             $table->text('alamat');
             $table->enum('jenis_kelamin',['L','P']);
