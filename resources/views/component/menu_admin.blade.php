@@ -20,7 +20,7 @@
                 <li id="li-kriteria"><a href="{{ url('kriteria')  }}">Kriteria</a></li>
                 <li id="li-list"><a href="{{ url('home/list')  }}">Daftar Nilai</a></li>
                 <li id="li-user"><a href="{{ url('user')  }}">User</a></li>
-                <li id="li-print"><a class="btn-print" href="#">Cetak Laporan</a></li>
+                <li id="li-print"><a class="btn-print" href="{{ url('print')  }}" target="_blank">Cetak Laporan</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -31,8 +31,8 @@
     <script>
         $(document).ready(function(){
             $('#li-{{ $menu  }}').addClass('active');
-            //$(".btn-print").printPage();
 
+            /*
             $(".btn-print").on('click', function(){
 
                 var element = document.getElementById('frame');
@@ -40,15 +40,15 @@
                     var iframe = document.createElement("iframe");
                     iframe.setAttribute('name','frame');
                     iframe.setAttribute('id','frame');
-                    iframe.setAttribute('src',"{{ url('print') }}");
+                    iframe.setAttribute('src'," url('print') ");
                     iframe.setAttribute('style','display:none;');
                     document.body.appendChild(iframe);
                 }else{
                     window.frames['frame'].focus();
                     window.frames['frame'].print();
                 }
-
             });
+            */
         });
     </script>
 @endpush
