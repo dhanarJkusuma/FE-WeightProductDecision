@@ -44,6 +44,7 @@
                                 Tambah Calon
                             </button>
                         </div>
+			<div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -79,6 +80,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+			</div>
                         {{ $calon->links()  }}
                     </div>
                 </div>
