@@ -16,7 +16,6 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li id="li-dashboard"><a href="{{ url('home') }}">Dashboard</a></li>
-                <li id="li-cpenerima"><a href="{{ route('gpenerima.index')  }}">C. Penerima</a></li>
                 <li id="li-list"><a href="{{ url('home/list')  }}">Daftar Nilai</a></li>
                 <li id="li-print"><a class="btn-print" href="{{ url('print')  }}">Cetak Laporan</a></li>
             </ul>
