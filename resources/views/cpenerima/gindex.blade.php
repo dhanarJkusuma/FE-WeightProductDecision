@@ -35,7 +35,7 @@
                                     <td>{{ ($c->jenis_kelamin == 'L') ? 'laki-laki' : 'perempuan' }}</td>
                                     <td>{{ $c->telp  }}</td>
                                     <td>
-                                        <a href="{{  route('gpenerima',['id' => $c->id]) }}"><button class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="lihat data"><span class="glyphicon glyphicon-eye-open"></span> </button></a>
+                                        <a href="{{  route('gpenerima.index',['id' => $c->id]) }}"><button class="btn btn-info" data-toggle="tooltip" data-placement="bottom" title="lihat data"><span class="glyphicon glyphicon-eye-open"></span> </button></a>
                                     </td>
                                 </tr>
                                 @php
