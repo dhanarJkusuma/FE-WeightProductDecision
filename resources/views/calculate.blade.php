@@ -101,8 +101,9 @@
                                     <tr>
                                         <td>{{ $p->nama }}</td>
                                         <td>
-
-                                            {{ $data['v'][$p->id]  }}
+                                            @if(array_key_exists($p->id, $data['v']))
+                                                {{ $data['v'][$p->id]  }}
+                                            @endif
 
                                         </td>
                                     </tr>
