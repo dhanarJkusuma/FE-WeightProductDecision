@@ -16,6 +16,8 @@ class PrintController extends Controller
     public function index(){
         $data = WPGenerator::weight_product();
         $penerima = CPenerima::all();
+        var_dump($data['v']);
+        die();
         arsort($data['v']);
 
         foreach ($penerima as $p) {
