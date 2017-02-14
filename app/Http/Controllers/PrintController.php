@@ -16,13 +16,12 @@ class PrintController extends Controller
     public function index(){
         $data = WPGenerator::weight_product();
         $penerima = CPenerima::all();
-        var_dump($data['v']);
-        die();
         arsort($data['v']);
 
         foreach ($penerima as $p) {
-            $data['v'][$p->id] = $p->nama . "|" . $data['v'][$p->id];
-
+            if(array_key_exists($p>id, $data['v'])){
+                $data['v'][$p->id] = $p->nama . "|" . $data['v'][$p->id];
+            }
         }
         return view('print.print')->with([
             'menu' => 'list',
