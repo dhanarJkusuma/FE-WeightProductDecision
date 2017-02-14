@@ -11,6 +11,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">{{ $title }}</div>
                     <div class="panel-body">
+			<div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                             <tr>
@@ -43,6 +44,7 @@
                             @endforeach
                             </tbody>
                         </table>
+			</div>
                         {{ $calon->links()  }}
                     </div>
                 </div>

@@ -40,6 +40,7 @@
                                 Tambah User
                             </button>
                         </div>
+			<div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
                             <tr>
@@ -70,6 +71,7 @@
                             @endforeach
                             </tbody>
                         </table>
+			</div>
                         {{ $users->links()  }}
                     </div>
                 </div>
