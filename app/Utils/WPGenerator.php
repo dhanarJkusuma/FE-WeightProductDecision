@@ -66,7 +66,9 @@ class WPGenerator
         $v = [];
 
         foreach ($s as $single_s){
-            $v[$single_s['penerima']] = $single_s['s']/$vj;
+            if(array_key_exists('penerima',$single_s)){
+                $v[$single_s['penerima']] = $single_s['s']/$vj;
+            }
         }
 
 

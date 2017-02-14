@@ -54,9 +54,9 @@
     <script src="{{ asset('js/jquery-3.1.1.min.js')  }}"></script>
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js')  }}"></script>
     <script>
-
         $(document).ready(function(){
-            document.window.print();
+            alert('hai');
+            window.print();
         });
     </script>
 </body>

@@ -18,7 +18,7 @@
                 <li id="li-dashboard"><a href="{{ url('home') }}">Dashboard</a></li>
                 <li id="li-cpenerima"><a href="{{ route('gpenerima.index')  }}">C. Penerima</a></li>
                 <li id="li-list"><a href="{{ url('home/list')  }}">Daftar Nilai</a></li>
-                <li id="li-print"><a class="btn-print" href="#">Cetak Laporan</a></li>
+                <li id="li-print"><a class="btn-print" href="{{ url('print')  }}">Cetak Laporan</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
@@ -30,14 +30,14 @@
     $(document).ready(function(){
         $('#li-{{ $menu  }}').addClass('active');
 
-        $(".btn-print").on('click', function(){
+        /*$(".btn-print").on('click', function(){
 
             var element = document.getElementById('frame');
             if(element==null){
                 var iframe = document.createElement("iframe");
                 iframe.setAttribute('name','frame');
                 iframe.setAttribute('id','frame');
-                iframe.setAttribute('src',"{{ url('print') }}");
+                iframe.setAttribute('src'," url('print') ");
                 iframe.setAttribute('style','display:none;');
                 document.body.appendChild(iframe);
             }else{
@@ -45,7 +45,7 @@
                 window.frames['frame'].print();
             }
 
-        });
+        });*/
     });
 </script>
 @endpush
