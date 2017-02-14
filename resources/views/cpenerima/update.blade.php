@@ -52,7 +52,7 @@
 
                                 <div class="form-group">
                                     <label>NIS*</label>
-                                    <input type="text" class="form-control" name="nis" placeholder="NIS" required/>
+                                    <input type="text" class="form-control" name="nis" placeholder="NIS" value="{{ $penerima->nis  }}"  required/>
                                 </div>
 
                                 <!-- form nama -->
