@@ -62,7 +62,7 @@
                                 @endphp
                                 @foreach($calon as $c)
                                 <tr>
-                                    <td>{{ $index  }}</td>
+                                    <td>{{ (($calon->currentPage() - 1 ) * $calon->perPage() ) + $loop->iteration }}</td>
                                     <td>{{ $c->nis  }}</td>
                                     <td>{{ $c->nama  }}</td>
                                     <td>{{ ($c->jenis_kelamin == 'L') ? 'laki-laki' : 'perempuan' }}</td>
