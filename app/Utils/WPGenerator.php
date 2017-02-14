@@ -46,7 +46,9 @@ class WPGenerator
             }
 
             if($n->kriteria->atribut == Kriteria::COST){
-                $weight[$n->kriteria_id] = ($weight[$n->kriteria_id] > 0) ? $weight[$n->kriteria_id] * -1 : $weight[$n->kriteria_id];
+                if(array_key_exists($n->kriteria_id, $weight)){
+                    $weight[$n->kriteria_id] = ($weight[$n->kriteria_id] > 0) ? $weight[$n->kriteria_id] * -1 : $weight[$n->kriteria_id];
+                }
             }
 
             $tmp_s *= pow($n->nilai,$weight[$n->kriteria_id]);
