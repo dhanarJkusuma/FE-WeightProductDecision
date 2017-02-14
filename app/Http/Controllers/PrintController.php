@@ -19,7 +19,7 @@ class PrintController extends Controller
         arsort($data['v']);
 
         foreach ($penerima as $p) {
-            if(array_key_exists($p>id, $data['v'])){
+            if(array_key_exists($p->id, $data['v'])){
                 $data['v'][$p->id] = $p->nama . "|" . $data['v'][$p->id];
             }
         }
