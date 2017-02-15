@@ -54,6 +54,12 @@
                                             <input type="text" class="form-control" name="kriteria[{{ $k->id  }}]" value="{{ (array_key_exists($k->id,$data)) ? $data[$k->id] : '' }}" placeholder="Nilai" pattern="[0-9]+(\.[0-9][0-9]?)?" />
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            Description :
+                                            {{ $k->description  }}
+                                        </td>
+                                    </tr>
                                 @endforeach
                                 </table>
                                 <button class="btn btn-warning" type="submit">Save</button>
