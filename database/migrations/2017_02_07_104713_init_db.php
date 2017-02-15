@@ -37,7 +37,7 @@ class InitDb extends Migration
         Schema::create('kriteria', function(Blueprint $table){
             $table->increments('id');
             $table->string('nama', 50);
-            $table->enum('atribut', ['benezfit', 'cost']);
+            $table->enum('atribut', ['benefit', 'cost']);
             $table->double('bobot');
             $table->text('description');
             $table->timestamps();
