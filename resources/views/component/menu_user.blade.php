@@ -17,7 +17,7 @@
             <ul class="nav navbar-nav">
                 <li id="li-dashboard"><a href="{{ url('home') }}">Dashboard</a></li>
                 <li id="li-list"><a href="{{ url('home/calculate')  }}">Lihat Perhitungan</a></li>
-                <li id="li-print"><a class="btn-print" href="{{ url('print')  }}">Cetak Laporan</a></li>
+                <li id="li-print"><a class="btn-print" href="{{ url('print')  }}" target="_blank">Cetak Laporan</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
