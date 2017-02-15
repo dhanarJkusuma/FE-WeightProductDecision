@@ -40,6 +40,11 @@
                                 <td> : </td>
                                 <td>{{ $kriteria->bobot }}</td>
                             </tr>
+                            <tr>
+                                <td><b>Description</b></td>
+                                <td> : </td>
+                                <td>{{ $kriteria->description }}</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
