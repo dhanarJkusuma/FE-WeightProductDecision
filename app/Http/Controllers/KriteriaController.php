@@ -48,8 +48,6 @@ class KriteriaController extends Controller
      */
     public function store(StoreKriteria $request)
     {
-        print_r($request->all());
-        die();
         $kriteria = Kriteria::create($request->except(['_token']));
         if($kriteria){
             $request->session()->flash('success', 'Berhasil menambahkan data kriteria.');
