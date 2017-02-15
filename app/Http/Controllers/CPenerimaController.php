@@ -89,9 +89,22 @@ class CPenerimaController extends Controller
      * @param  \App\CPenerima  $cPenerima
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreCPenerima $request, $id)
+    public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'nama' => 'required|max:50|regex:[[A-Za-z]+]',
+            'alamat' => 'required',
+            'jenis_kelamin' => 'required',
+            'tgl_lahir' =>  'required',
+            'telp' => 'required|max:20|regex:[[0-9]+]'
+        ]);
         $penerima = CPenerima::findOrFail($id);
+        $nisIsExist = CPenerima::where('id','<>',$id)->where('nis','=',$request->nis)->first();
+        if($nisIsExist){
+            $request->session()->flash('error', 'Nis has already exists.');
+            return view('cpenerima.update', ['penerima' => $penerima, 'menu' => 'cpenerima' , 'title' => 'Ubah data ' . $penerima->nama]);
+        }
+
         $update = $penerima->update($request->except(['_token','_method']));
         if($update){
             $request->session()->flash('success', 'Berhasil mengubah data calon penerima beasiswa.');
