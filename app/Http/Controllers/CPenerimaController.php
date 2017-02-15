@@ -101,7 +101,7 @@ class CPenerimaController extends Controller
         $penerima = CPenerima::findOrFail($id);
         $nisIsExist = CPenerima::where('id','<>',$id)->where('nis','=',$request->nis)->first();
         if($nisIsExist){
-            $request->session()->flash('error', 'Nis has already exists.');
+            $this->validateWithBag("Nis is already exists",$request,['nis']);
             return view('cpenerima.update', ['penerima' => $penerima, 'menu' => 'cpenerima' , 'title' => 'Ubah data ' . $penerima->nama]);
         }
 
