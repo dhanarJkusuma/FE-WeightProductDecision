@@ -17,12 +17,12 @@
                             <div class="input-group">
                                 <span class="input-group-addon" id="sizing-addon2">@</span>
                                 <input type="text" class="form-control" name="username" placeholder="Username" aria-describedby="sizing-addon2" value="{{ old('username') }}" required autofocus>
-                                @if ($errors->has('username'))
-                                    <span class="help-block">
+                            </div>
+                            @if ($errors->has('username'))
+                                <span class="help-block">
                                         <strong>{{ $errors->first('username') }}</strong>
                                     </span>
-                                @endif
-                            </div>
+                            @endif
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
@@ -30,12 +30,12 @@
                             <div class="input-group">
                                 <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-asterisk"></span> </span>
                                 <input type="password" id="password" class="form-control" name="password" placeholder="Password" aria-describedby="sizing-addon2" value="{{ old('username') }}" required>
-                                @if ($errors->has('username'))
-                                    <span class="help-block">
+                            </div>
+                            @if ($errors->has('username'))
+                                <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
-                            </div>
+                            @endif
                         </div>
 
                         <div class="form-group">
