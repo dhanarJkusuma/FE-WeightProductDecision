@@ -71,7 +71,6 @@ class WPGenerator
             $v[$single_s['penerima']] = $single_s['s']/$vj;
         }
 
-
         return [
             'weight' => $weight,
             's' => $s,

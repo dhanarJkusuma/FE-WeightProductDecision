@@ -25,7 +25,7 @@ class StoreCPenerima extends FormRequest
     {
         return [
             'nis' => 'required|max:20|regex:[[0-9]+]|unique:cpenerima',
-            'nama' => 'required|max:50',
+            'nama' => 'required|max:50|regex:[[A-Za-z]+]',
             'alamat' => 'required',
             'jenis_kelamin' => 'required',
             'tgl_lahir' =>  'required',

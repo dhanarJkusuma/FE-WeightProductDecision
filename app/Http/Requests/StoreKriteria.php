@@ -26,7 +26,8 @@ class StoreKriteria extends FormRequest
         return [
             'nama' => 'required|max:50',
             'atribut' => 'required',
-            'bobot' => 'required'
+            'bobot' => 'required',
+            'description' => 'required'
         ];
     }
 }

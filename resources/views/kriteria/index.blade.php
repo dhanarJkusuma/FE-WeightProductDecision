@@ -114,6 +114,13 @@
                                 <input type="text" class="form-control" name="bobot" pattern="[0-9]+(\.[0-9][0-9]?)?" placeholder="Bobot" required/>
                             </div>
                             <!-- end form telp-->
+
+                            <!-- form description -->
+                            <div class="form-group">
+                                <label>Description*</label>
+                                <textarea class="form-control" placeholder="Description" name="description" required></textarea>
+                            </div>
+                            <!-- end form description-->
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -110,15 +110,14 @@
                             <!-- form nama -->
                             <div class="form-group">
                                 <label>Nama*</label>
-                                <input type="text" class="form-control" name="nama" placeholder="Nama" required/>
+                                <input type="text" pattern="[A-Za-z]+" class="form-control" name="nama" placeholder="Nama" required/>
                             </div>
                             <!-- end form nama -->
 
                             <!-- form alamat -->
                             <div class="form-group">
                                 <label>Alamat*</label>
-                                <textarea class="form-control" name="alamat" placeholder="Alamat" required>
-                                </textarea>
+                                <textarea class="form-control" name="alamat" placeholder="Alamat" required></textarea>
                             </div>
                             <!-- end form alamat -->
 

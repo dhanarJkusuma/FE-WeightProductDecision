@@ -52,13 +52,13 @@
 
                                 <div class="form-group">
                                     <label>NIS*</label>
-                                    <input type="text" class="form-control" name="nis" placeholder="NIS" value="{{ $penerima->nis  }}"  required/>
+                                    <input type="text" pattern="[0-9]+" class="form-control" name="nis" placeholder="NIS" value="{{ $penerima->nis  }}"  required/>
                                 </div>
 
                                 <!-- form nama -->
                                 <div class="form-group">
                                     <label>Nama*</label>
-                                    <input type="text" class="form-control" name="nama" placeholder="Nama" value="{{ $penerima->nama  }}"/>
+                                    <input type="text" pattern="[A-Za-z]+" class="form-control" name="nama" placeholder="Nama" value="{{ $penerima->nama  }}"/>
                                 </div>
                                 <!-- end form nama -->
 

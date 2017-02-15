@@ -69,6 +69,13 @@
                                 </div>
                                 <!-- end form telp-->
 
+                                <!-- form description -->
+                                <div class="form-group">
+                                    <label>Description*</label>
+                                    <textarea class="form-control" placeholder="Description" name="description" required>{{ $kriteria->description  }}</textarea>
+                                </div>
+                                <!-- end form description-->
+
                                 <button class="btn btn-warning" type="submit">Save</button>
                             </form>
                         </div>
