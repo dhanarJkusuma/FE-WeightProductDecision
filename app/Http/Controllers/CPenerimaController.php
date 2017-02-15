@@ -92,6 +92,7 @@ class CPenerimaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
+            'nis' => 'required|max:20|regex:[[0-9]+]',
             'nama' => 'required|max:50|regex:[[A-Za-z]+]',
             'alamat' => 'required',
             'jenis_kelamin' => 'required',
@@ -101,7 +102,9 @@ class CPenerimaController extends Controller
         $penerima = CPenerima::findOrFail($id);
         $nisIsExist = CPenerima::where('id','<>',$id)->where('nis','=',$request->nis)->first();
         if($nisIsExist){
-            $this->validateWithBag("Nis is already exists",$request,['nis']);
+            $this->validate($request,[
+               'nis' => 'required|max:20|regex:[[0-9]+]|unique:cpenerima'
+            ]);
             return view('cpenerima.update', ['penerima' => $penerima, 'menu' => 'cpenerima' , 'title' => 'Ubah data ' . $penerima->nama]);
         }
 
